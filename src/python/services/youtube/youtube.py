@@ -23,9 +23,6 @@ YOUTUBE_API_VERSION = "v3"
 S3_ACCESS_KEY = os.environ.get('AWS_ACCESS_KEY')
 S3_SECRET_KEY = os.environ.get('AWS_SECRET_KEY')
 
-print DEVELOPER_KEY
-print S3_ACCESS_KEY
-print S3_SECRET_KEY
 
 def write_to_avro(data):
     schema = avro.schema.parse(open('./youtube.avsc').read())
@@ -60,10 +57,6 @@ def youtube_search(options):
         elif search_result["id"]["kind"] == "youtube#playlist":
             playlists.append("%s (%s)" % (search_result["snippet"]["title"],
                                           search_result["id"]["playlistId"]))
-
-    print "Videos:\n", "\n".join(videos), "\n"
-    print "Channels:\n", "\n".join(channels), "\n"
-    print "Playlists:\n", "\n".join(playlists), "\n"
 
     write_to_avro(videos)
 
