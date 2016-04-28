@@ -1,0 +1,7 @@
+{ "namespace" : "youtube.avro",
+  "type" : "record",
+  "name" : "Youtube",
+  "fields": [
+    {"name":"keyword", "type": "string"}
+  ]
+}

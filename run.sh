@@ -1,0 +1,1 @@
+source venv/bin/activate && rm $VIRTUAL_ENV/bin/postactivate && ln -s .env/postactivate $VIRTUAL_ENV/bin/postactivate && source ~/.bashrc && cd src/python/services/youtube/ && python youtube.py
