@@ -11,7 +11,6 @@ from oauth2client.tools import argparser
 import json
 
 
-
 # Set DEVELOPER_KEY to the API key value from the APIs & auth > Registered apps
 # tab of
 #   https://cloud.google.com/console
@@ -26,6 +25,7 @@ S3_SECRET_KEY = os.environ.get('AWS_SECRET_KEY')
 print DEVELOPER_KEY
 print S3_ACCESS_KEY
 print S3_SECRET_KEY
+
 
 def write_to_avro(data):
     schema = avro.schema.parse(open('./youtube.avsc').read())
